@@ -1,15 +1,24 @@
 #include <stdio.h>
+#include<conio.h>
 int main() {
-    int n, i, sum = 0;
-    printf("Enter a positive integer: ");
+    int n, r,rev,t,a;
+    printf("Enter a number : ");
     scanf("%d", &n);
-    i = 1;
-
-    while (i <= n) {
-        sum += i;
-        ++i;
+    t=n*n;
+    for(rev=0;n>0;n/=10)
+    {
+      r=n%10;
+      rev=rev*10+r;
     }
-
-    printf("Sum = %d", sum);
-    return 0;
-}
+    rev=rev*rev;
+    for(a=0;rev>0;rev/=10)
+    {
+      r=rev%10;
+      a=a*10+r;
+    }
+    if(t==a)
+    printf(" %d is a magic  number ",n);
+    else
+    printf(" %d is not a magic  number ",n);
+    getch();
+ }
